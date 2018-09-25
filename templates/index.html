@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+    {% csrf_token %}
+    <h1 style="background-color: antiquewhite;color: black">Hello dongbao!</h1>
+    <button onclick="point()">666</button>
+    <h1>用户展示：</h1>
+        <table border="1">
+            <thead>
+                <tr>用户名</tr>
+                <tr>密码</tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                <tr>
+                    <td>{{ item.user }}</td>
+                    <td>{{ item.pwd }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    <script src="/static/jquery-3.2.1.min.js"></script>
+    <script>
+        function point() {
+            alert('555');
+        }
+    </script>
+</body>
+</html>
